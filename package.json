@@ -1,0 +1,77 @@
+{
+  "dependencies": {
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@openzeppelin/contracts": "^4.7.2",
+    "@openzeppelin/hardhat-upgrades": "^1.19.1",
+    "@uniswap/sdk": "^3.0.3",
+    "@uniswap/v2-core": "^1.0.1",
+    "@uniswap/v2-periphery": "^1.1.0-beta.0",
+    "bn.js": "^5.2.1",
+    "chai-bn": "^0.3.1",
+    "dotenv": "^16.0.1",
+    "hardhat": "^2.10.1"
+  },
+  "scripts": {
+    "test": "npx hardhat test",
+    "lint": "eslint --fix --fix-type suggestion --fix-type problem test/index.ts",
+    "compile": "npx hardhat compile",
+    "coverage-sol": "npx hardhat coverage --solcoverjs ./coverage/.solcover.js",
+    "coverage-test": "npx hardhat coverage --testfiles test/*.ts",
+    "deploy-test": "npx hardhat run --network ropsten scripts/deployTest.ts"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix --fix-type suggestion --fix-type problem",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "name": "uniswap",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@ethersproject/abi": "^5.4.7",
+    "@ethersproject/providers": "^5.4.7",
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^1.0.1",
+    "@nomiclabs/hardhat-ethers": "^2.0.0",
+    "@nomiclabs/hardhat-etherscan": "^3.0.0",
+    "@nomiclabs/hardhat-waffle": "^2.0.0",
+    "@typechain/ethers-v5": "^7.0.1",
+    "@typechain/hardhat": "^2.3.0",
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^12.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "chai": "^4.2.0",
+    "dotenv": "^16.0.1",
+    "eslint": ">=5.16.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.30.0",
+    "ethereum-waffle": "^3.0.0",
+    "ethers": "^5.0.0",
+    "hardhat-gas-reporter": "^1.0.4",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.0",
+    "prettier": "^2.6.2",
+    "prettier-plugin-solidity": "^1.0.0-beta.13",
+    "solhint": "^3.3.6",
+    "solidity-coverage": "^0.7.21",
+    "ts-node": "^10.1.0",
+    "typechain": "^8.1.0",
+    "typescript": "^4.5.2"
+  }
+}
